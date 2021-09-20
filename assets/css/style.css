@@ -13,7 +13,13 @@ COLOR PALETTE
 #457B9D - Celadon Blue
 #1D3557 - Prussian Blue
 */
-
+:root {
+  --imperialRed: #E63946;
+  --honeyDew: #F1FAEE;
+  --powderBlue: #A8DADC;
+  --celadonBlue: #457B9D;
+  --prussianBlue: #1D3557;
+}
 /* Universal Selector */
 * {
   box-sizing: border-box;
@@ -22,99 +28,109 @@ COLOR PALETTE
 }
 /* Element Selectors */
 body {
-  background-color: #1D3557;
-  color:#F1FAEE;
+  background-color: var(--prussianBlue);
+  color:var(--honeyDew);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2rem;
 }
 
 a {
-  color: #ffffff;
+  color: var(--honeyDew);
   text-decoration: none;
 }
 /* ------HEADER------ */
 header {
-  padding: 20px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  background-color: #E63946;
-}
-
-header h1 {
-  display: inline-block;
-  font-size: 48px;
-}
-
-header nav {
-  padding-top: 15px;
-  margin-right: 20px;
-  float: right;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
-}
-
-/* ------MAIN------ */
-aside {
-  margin-right: 20px;
-  padding: 20px;
-  clear: both;
-  float: right;
-  width: 20%;
-  height: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-/* Class Selectors */
-.float-left {
-  float: left;
-  margin-right: 25px;
-}
-
-.float-right {
-  float: right;
-  margin-left: 25px;
-}
-
-.card {
-  margin-bottom: 20px;
-  padding: 50px;
-  height: 300px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-.card img {
-  max-height: 200px;
-}
-
-.card h2 {
-  margin-bottom: 20px;
-  font-size: 36px;
-}
-
-/* ID Selectors */
-#content {
-  width: 75%;
-  display: inline-block;
-  margin-left: 20px;
-  font-size: 16px;
-}
-
-#hero {
-  height: 800px;
-  width: 100%;
-  margin-bottom: 25px;
-  background-image: url("");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ------FOOTER------ */
-footer {
-  padding: 30px;
-  clear: both;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  padding: 1rem;
+  background-color: var(--imperialRed);
   text-align: center;
 }
 
-footer h2 {
-  font-size: 20px;
+
+main .parent {
+display: grid;
+grid-template-columns: 1fr 2fr 1fr;
+grid-template-rows: 1fr repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+justify-content: center;
+padding: 1rem;
+}
+
+main #question {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.answer {
+  justify-content: center;
+  text-align: center;
+  padding: .5rem;
+  font-size: 1.5rem;
+}
+#one {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+#two {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+#three {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+#four {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+
+#highscores {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: left;
+  padding: 1rem;
+}
+
+#timer {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  text-align: right;
+  padding: 1rem;
+}
+
+#result {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 6;
+  text-align: center;
+  padding: 1rem;
+}
+
+#start-button {
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  background-color: var(--imperialRed);
+  color: var(--honeyDew);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
