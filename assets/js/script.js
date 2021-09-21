@@ -22,6 +22,49 @@ var answerArray = [
   ["answer 4-1", "answer 4-2", "answer 4-3", "answer 4-4"],
   ["answer 5-1", "answer 5-2", "answer 5-3", "answer 5-4"],
 ];
+var questionAnswers = [
+  {
+    question: "1. Which type of variable is 'var x = 1;'?",
+    answer1: "array",
+    answer2: "string",
+    answer3: "object",
+    answer4: "number",
+    correct: "number"
+  },
+  {
+    question: "2. Which html tag will you find below an external JavaScript link?",
+    answer1: "</body>",
+    answer2: "<div>",
+    answer3: "<footer>",
+    answer4: "</html>",
+    correct: "</body>"
+  },
+  {
+    question: "3. Which method is used to change the text inside an html element?",
+    answer1: "this",
+    answer2: "length",
+    answer3: "textContent",
+    answer4: "toLowerCase",
+    correct: "textContent"
+  },
+  {
+    question: "4. How many times will this loop run? for(var i = 0; i <= 4, i++)",
+    answer1: "1",
+    answer2: "0",
+    answer3: "5",
+    answer4: "4",
+    correct: "5"
+  },
+  {
+    question: "5. Which of these is a popular JavaScript library?",
+    answer1: "Bootstrap",
+    answer2: "PHP",
+    answer3: "qJerry",
+    answer4: "jQuery",
+    correct: "jQuery"
+  }
+];
+
 
 function startQuiz() {
   time = 10;
@@ -56,25 +99,25 @@ function saveScore() {
 function gameLost() {}
 
 function askQuestion(x) {
-  if (x < questionArray.length) {
-    question.textContent = questionArray[x];
+  if (x < questionAnswers.length) {
+    question.textContent = questionAnswers[x].question;
     for (var i = 0; answerClass.length > i; i++) {
       answerClass[i].style.border = "1px solid var(--honeyDew)";
     }
-    answerOne.textContent = answerArray[x][0];
+    answerOne.textContent = questionAnswers[x].answer1;
     answerOne.addEventListener("click", nextQuestion);
-    answerTwo.textContent = answerArray[x][1];
+    answerTwo.textContent = questionAnswers[x].answer2;
     answerTwo.addEventListener("click", nextQuestion);
-    answerThree.textContent = answerArray[x][2];
+    answerThree.textContent = questionAnswers[x].answer3;
     answerThree.addEventListener("click", nextQuestion);
-    answerFour.textContent = answerArray[x][3];
+    answerFour.textContent = questionAnswers[x].answer4;
     answerFour.addEventListener("click", nextQuestion);
     qCount++;
   }
 }
 
 function nextQuestion() {
-  if (qCount < questionArray.length) {
+  if (qCount < questionAnswers.length) {
     var z = qCount;
     askQuestion(z);
   } else {
