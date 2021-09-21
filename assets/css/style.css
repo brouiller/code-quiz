@@ -134,3 +134,12 @@ main #question {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+
+#countdown {
+  padding: 1rem;
+}
+
+#scores {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
