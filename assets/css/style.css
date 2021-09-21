@@ -37,7 +37,7 @@ body {
 
 a {
   color: var(--honeyDew);
-  text-decoration: none;
+  text-decoration: underline;
 }
 /* ------HEADER------ */
 header {
@@ -69,9 +69,16 @@ main #question {
 .answer {
   justify-content: center;
   text-align: center;
+  align-self: center;
   padding: .5rem;
   font-size: 1.5rem;
+  cursor: pointer;
 }
+
+.answer:hover {
+  background-color: var(--imperialRed);
+}
+
 #one {
   grid-column-start: 2;
   grid-column-end: 2;
