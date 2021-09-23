@@ -105,7 +105,6 @@ function startCountdown() {
 //clears the screen, creates a form to submit initials, and saves scores
 function saveScore(x) {
   score = x;
-  console.log('score saved');
   for (i = 0; answerClass.length > i; i++){
     answerClass[i].setAttribute("class", "answer");
     answerClass[i].style.cursor = "unset";
@@ -125,7 +124,6 @@ function saveScore(x) {
 //add listener to submit button and save scores to local storage
   var inputEl = document.getElementById("input")
   var submitEl = document.getElementById('submit');
-  console.log(submitEl);
   submitEl.addEventListener("click", function (event) {
     event.preventDefault();
     var existingScores = JSON.parse(localStorage.getItem("allEntries"));
@@ -143,8 +141,6 @@ function saveScore(x) {
 
 //displays questions and answers on the screen and builds click functionality
 function askQuestion(x) {
-  console.log('x: ' + x);
-  console.log('askQ count: ' + qCount);
   answerOne.removeEventListener('click', nextQuestion);
   answerTwo.removeEventListener('click', nextQuestion);
   answerThree.removeEventListener('click', nextQuestion);
@@ -183,14 +179,11 @@ function askQuestion(x) {
 
 //checks to see if the answer was correct, applies penalty for incorrect answers, and loops through to the next question
 function nextQuestion(event) {
-  console.log(event.target.id);
   qCount++;
     if (event.target.id === check) {
       result.textContent = 'correct';
-      console.log('true: ' + time);
     } else {
       result.textContent = 'incorrect';
-      console.log('false: ' + time);
       if(time > 10){
         time -= 10;
       } else {
