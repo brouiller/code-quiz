@@ -72,11 +72,23 @@ main #question {
   align-self: center;
   padding: .5rem;
   font-size: 1.5rem;
-  cursor: pointer;
+  cursor:pointer;
+}
+#submit {
+  cursor:pointer;
+  background-color: var(--imperialRed);
+  color: var(--honeyDew);
+  padding: 0.2rem;
+  margin-left: 1rem;
 }
 
-.answer:hover {
-  background-color: var(--imperialRed);
+#input {
+  color: var(--honeyDew);
+  text-transform: uppercase;
+}
+
+.hover:hover {
+ background-color: var(--imperialRed);
 }
 
 #one {
@@ -149,4 +161,7 @@ main #question {
 #scores {
   font-size: 1.2rem;
   padding: 1rem;
+}
+#input {
+  background-color: var(--celadonBlue);
 }
